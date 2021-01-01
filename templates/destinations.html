@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Destination</title>
+</head>
+<body>
+{% if user.is_authenticated %}
+<h3>hello {{user}}</h3>
+{% else %}
+<h3> you have to login first</h3>
+<form action="login" method="post">
+
+            {% csrf_token %}
+            username = <input type = text name = username placeholder="username"><br>
+            password = <input type="password" name = password placeholder="password"><br>
+            <input type="submit">
+            </form>
+
+            <div>
+
+        {% for message in messages %}
+        <h3>{{message}}</h3>
+        {% endfor %}
+            </div>
+
+        {% block content %}
+
+        {% endblock %}
+
+{% endif %}
+
+</body>
+
+
+
+
+
+
+
+</body>
+
+</html>
