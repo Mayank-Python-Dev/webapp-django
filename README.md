@@ -1,2 +1,1 @@
-# webapp-django
-My first project
+# tour webapp using django framework
